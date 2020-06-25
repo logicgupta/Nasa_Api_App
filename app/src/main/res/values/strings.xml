@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NASA</string>
+    <string name="base_url"> https://api.nasa.gov/</string>
+    <string name="network_connection_error">Connection Error</string>
+</resources>
