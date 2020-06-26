@@ -60,10 +60,6 @@ class MainViewModel(networkHelper: NetworkHelper,
                     Log.e("Tag","${it}")
                     todayLiveData.postValue(it)
                     progressLiveData.postValue(false)
-                    var img_url=it.url.split("image");
-                    Log.e("x",""+img_url[0])
-                    Log.e("x",""+img_url[1])
-                   // getDownloadedImage("/image"+img_url[1]);
 
                 },{
                     it.message?.run {
@@ -76,14 +72,6 @@ class MainViewModel(networkHelper: NetworkHelper,
 
     }
 
-    fun  getDownloadedImage(imageUrl:String){
 
-        compositeDisposable.add(
-            mainRepository
-                .getDownloadImage(imageUrl)
-                .subscribeOn(Schedulers.io())
-                .subscribe()
-        )
-    }
 
 }

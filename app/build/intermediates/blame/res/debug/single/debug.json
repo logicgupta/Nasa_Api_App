@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
+        "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_design.xml.flat",
+        "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\drawable\\button_design.xml"
+    },
+    {
         "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_rew.xml.flat",
         "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\drawable\\ic_rew.xml"
     },

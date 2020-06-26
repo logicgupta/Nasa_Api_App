@@ -14,6 +14,5 @@ class MainRepository @Inject constructor(private  val apiInterface: ApiInterface
     fun getSpecificData(date:String):Single<DefaultData> =
         apiInterface.getSpecificDateRequest("DEMO_KEY",date)
 
-    fun getDownloadImage(imageUrl:String):Single<ResponseBody> =
-            apiInterface.downloadImage(imageUrl)
+
 }

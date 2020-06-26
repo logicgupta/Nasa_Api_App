@@ -18,10 +18,4 @@ interface ApiInterface {
     fun getSpecificDateRequest(@Query("api_key") key:String
                                ,@Query("date") date:String):Single<DefaultData>
 
-
-    @Streaming
-    @GET
-    fun downloadImage(@Url imageUrl: String): Single<ResponseBody>
-
-
 }

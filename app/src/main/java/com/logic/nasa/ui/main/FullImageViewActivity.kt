@@ -1,12 +1,15 @@
 package com.logic.nasa.ui.main
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Environment
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.logic.nasa.R
 import kotlinx.android.synthetic.main.activity_full_image_view.*
+import java.io.File
 
 
 class FullImageViewActivity : AppCompatActivity() {
@@ -20,19 +23,13 @@ class FullImageViewActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        val url:String=intent.getStringExtra("url")
-//        val bitmap: Bitmap =
-//            Glide.with(this).asBitmap().load(url).submit(600, 300).get()
-//        image.setImageBitmap(bitmap)
+        val fileName:String=intent.getStringExtra("filename")
+        val file = File(
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+            fileName
+        ) // Set Your File Name
+        val myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath())
+        image.setImageBitmap(myBitmap)
 
-        val myOptions = RequestOptions()
-            .fitCenter() // or centerCrop
-            .override(100, 100)
-
-        Glide.with(this)
-            .asBitmap()
-            .apply(myOptions)
-            .load(url)
-            .into(image)
     }
 }

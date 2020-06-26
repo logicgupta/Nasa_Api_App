@@ -4,9 +4,10 @@ import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.View
-import android.view.Window
 import android.view.WindowManager
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
@@ -14,22 +15,18 @@ import com.google.android.exoplayer2.extractor.ExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.TrackGroupArray
-import com.google.android.exoplayer2.source.dash.DashMediaSource
-import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray
 import com.google.android.exoplayer2.trackselection.TrackSelector
-import com.google.android.exoplayer2.upstream.BandwidthMeter
-import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory
+import com.google.android.exoplayer2.upstream.*
 import com.logic.nasa.R
 import com.logic.nasa.di.component.ActivityComponent
 import com.logic.nasa.utils.BaseActivity
 import com.logic.nasa.utils.showToast
 import kotlinx.android.synthetic.main.activity_detailed.*
 import kotlinx.android.synthetic.main.custom_controller.*
+import java.io.File
 
 class PlayVideoActivity : BaseActivity<MainViewModel>() {
 
@@ -40,7 +37,7 @@ class PlayVideoActivity : BaseActivity<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        url=intent.getStringExtra("url");
+        url=intent.getStringExtra("filename");
 
     }
 
@@ -64,7 +61,14 @@ class PlayVideoActivity : BaseActivity<MainViewModel>() {
         // Set Landscape
         requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
-        val videoUrl:Uri= Uri.parse(url)
+        val fileName:String=intent.getStringExtra("filename")
+        val file = File(
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+            fileName)
+
+        Log.e("",""+file.absolutePath)
+
+        val videoUrl:Uri= Uri.parse(file.absolutePath)
 
         // Initialize load control
 
@@ -82,17 +86,19 @@ class PlayVideoActivity : BaseActivity<MainViewModel>() {
         simpleExoPlayer=ExoPlayerFactory.newSimpleInstance(this
         ,trackSelector,loadControl)
 
-        // Initialize data source factory
+        // Initialize data source factory          --  Network or Online Rendering
         val defaultHttpDataSourceFactory=
             DefaultHttpDataSourceFactory("exoplayer_video")
 
+        //  Offline Rendering of Video
+        val dataSourceFactory: DataSource.Factory = FileDataSourceFactory()
         // Initialize extractor Factory
 
         val extractorsFactory:ExtractorsFactory=DefaultExtractorsFactory()
 
         // Initialize media source
         val mediaSource:MediaSource=ExtractorMediaSource(
-            videoUrl,defaultHttpDataSourceFactory,extractorsFactory,
+            videoUrl,dataSourceFactory,extractorsFactory,
             null,null
         )
 
