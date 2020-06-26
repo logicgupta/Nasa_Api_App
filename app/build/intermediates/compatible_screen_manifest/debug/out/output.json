@@ -1,1 +1,6 @@
-[]
+{
+  "version": 1,
+  "applicationId": "com.logic.nasa",
+  "variantType": "BASE_APK",
+  "elements": []
+}

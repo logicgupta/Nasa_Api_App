@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.View
+import androidx.annotation.LongDef
 import androidx.lifecycle.Observer
 import com.logic.nasa.R
 import com.logic.nasa.di.component.ActivityComponent
@@ -45,6 +46,8 @@ class MainActivity : BaseActivity<MainViewModel>() {
     private val STORAGE_PERMISSION_CODE:Int=1000
     private var fileName:String?=null
     var download_flag:Int = 0
+    var downloadId:Long = 0
+    lateinit var manager:DownloadManager
     override fun setupObservers() {
         super.setupObservers()
 
@@ -79,7 +82,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     fun getDownloadedImage(){
         fileName=System.currentTimeMillis().toString()
-        val request=DownloadManager.Request(Uri.parse("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"))
+        val request=DownloadManager.Request(Uri.parse(url))
         request
             .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
         request.setTitle("Downloading")
@@ -91,27 +94,8 @@ class MainActivity : BaseActivity<MainViewModel>() {
         fileName)
 
         // get download service and enqueue
-        val manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-       val downloadId= manager.enqueue(request)
-
-        val cursor: Cursor =
-            manager.query(DownloadManager.Query().setFilterById(downloadId))
-
-        if (cursor != null && cursor.moveToNext()) {
-            val status: Int = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
-            cursor.close()
-            if (status == DownloadManager.STATUS_FAILED) {
-                download_flag=1
-            } else if (status == DownloadManager.STATUS_PENDING || status == DownloadManager.STATUS_PAUSED) {
-                download_flag=2
-
-            } else if (status == DownloadManager.STATUS_SUCCESSFUL) {
-                download_flag=3
-            } else if (status == DownloadManager.STATUS_RUNNING) {
-                download_flag=4
-            }
-        }
-
+        manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        downloadId= manager.enqueue(request)
     }
 
     fun checkPermission(){
@@ -156,12 +140,32 @@ class MainActivity : BaseActivity<MainViewModel>() {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
+   fun getstatus(){
+
+       val cursor: Cursor =
+           manager.query(DownloadManager.Query().setFilterById(downloadId))
+
+       if (cursor != null && cursor.moveToNext()) {
+           val status: Int = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
+           cursor.close()
+           if (status == DownloadManager.STATUS_FAILED) {
+               download_flag=1
+           } else if (status == DownloadManager.STATUS_PENDING || status == DownloadManager.STATUS_PAUSED) {
+               download_flag=2
+
+           } else if (status == DownloadManager.STATUS_SUCCESSFUL) {
+               download_flag=3
+           } else if (status == DownloadManager.STATUS_RUNNING) {
+               download_flag=4
+           }
+       }
+    }
     override fun setupView() {
         calender.setOnClickListener {
             openDatePicker()
         }
         button.setOnClickListener {
-
+            getstatus()
 
             val file = File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),

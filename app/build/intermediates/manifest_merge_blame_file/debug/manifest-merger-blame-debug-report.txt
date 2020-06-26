@@ -30,7 +30,7 @@
 18        android:allowBackup="true"
 18-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:12:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.3.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\3680f33e943d101e1f4a17441664df75\core-1.3.0\AndroidManifest.xml:24:18-86
+19-->[androidx.core:core:1.3.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\8106c9afeb27cc0c50f85995740f877c\core-1.3.0\AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:extractNativeLibs="false"
 22        android:icon="@mipmap/ic_launcher"
@@ -71,15 +71,15 @@
 39        </activity>
 40
 41        <provider
-41-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\f47523315d3f4c865bfb1f1a35af391a\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+41-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\5c7cdf17db77e6fa1e235092fe85ccd9\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
 42            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-42-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\f47523315d3f4c865bfb1f1a35af391a\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+42-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\5c7cdf17db77e6fa1e235092fe85ccd9\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
 43            android:authorities="com.logic.nasa.lifecycle-process"
-43-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\f47523315d3f4c865bfb1f1a35af391a\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+43-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\5c7cdf17db77e6fa1e235092fe85ccd9\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
 44            android:exported="false"
-44-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\f47523315d3f4c865bfb1f1a35af391a\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+44-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\5c7cdf17db77e6fa1e235092fe85ccd9\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
 45            android:multiprocess="true" />
-45-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\f47523315d3f4c865bfb1f1a35af391a\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+45-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\5c7cdf17db77e6fa1e235092fe85ccd9\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
 46    </application>
 47
 48</manifest>
