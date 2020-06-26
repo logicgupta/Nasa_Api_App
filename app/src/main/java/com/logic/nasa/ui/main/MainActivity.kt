@@ -33,7 +33,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // viewModel.getTodayData()
+        viewModel.getTodayData()
     }
     var day:String?=null
     var month:String?=null
@@ -65,85 +65,88 @@ class MainActivity : BaseActivity<MainViewModel>() {
             desc_textView.text=it.explanation;
             fileUrl=it.url
             mediaType=it.media_type
-            url=it.url
+            url=it.hdurl
             if(it.media_type == "image"){
                 button.text="Zoom"
             }
             else
                 button.text="Play"
-            checkPermission()
+           // checkPermission()
         })
     }
     /*
-                This is just a demo do not use this method
+                This is only required if we need to download . I can modify the code if required.
+                If you need retrofit code for downloading do contact me on - 8963970412
      */
-
-    fun getDownloadedImage(){
-        fileName=System.currentTimeMillis().toString()
-        val request=DownloadManager.Request(Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"))
-        request
-            .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
-        request.setTitle("Downloading")
-        request.setDescription("File is Downloading")
-
-        request.allowScanningByMediaScanner()
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
-        fileName)
-
-        // get download service and enqueue
-        val manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-        manager.enqueue(request)
-
-    }
-
-    fun checkPermission(){
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
-                    PackageManager.PERMISSION_DENIED){
-                //Reject
-            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),STORAGE_PERMISSION_CODE)
-
-
-            }
-            else{
-                // Granted
-                getDownloadedImage()
-            }
-        }
-        else{
-                //   system os is less
-            getDownloadedImage()
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        when(requestCode){
-            STORAGE_PERMISSION_CODE->{
-                if(grantResults.isNotEmpty() && grantResults[0]==
-                        PackageManager.PERMISSION_GRANTED){
-
-                    // permission PopUp granted
-                    getDownloadedImage()
-                }
-                else{
-                  //  permissions from popup denied
-                    showToast("Permission Denied");
-
-                }
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    }
+//
+//    fun getDownloadedImage(){
+//        fileName=System.currentTimeMillis().toString()
+//        val request=DownloadManager.Request(Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"))
+//        request
+//            .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+//        request.setTitle("Downloading")
+//        request.setDescription("File is Downloading")
+//
+//        request.allowScanningByMediaScanner()
+//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+//        fileName)
+//
+//        // get download service and enqueue
+//        val manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+//        manager.enqueue(request)
+//
+//    }
+//
+//    fun checkPermission(){
+//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+//            if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)==
+//                    PackageManager.PERMISSION_DENIED){
+//                //Reject
+//            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),STORAGE_PERMISSION_CODE)
+//
+//
+//            }
+//            else{
+//                // Granted
+//                getDownloadedImage()
+//            }
+//        }
+//        else{
+//                //   system os is less
+//            getDownloadedImage()
+//        }
+//    }
+//
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<out String>,
+//        grantResults: IntArray
+//    ) {
+//        when(requestCode){
+//            STORAGE_PERMISSION_CODE->{
+//                if(grantResults.isNotEmpty() && grantResults[0]==
+//                        PackageManager.PERMISSION_GRANTED){
+//
+//                    // permission PopUp granted
+//                    getDownloadedImage()
+//                }
+//                else{
+//                  //  permissions from popup denied
+//                    showToast("Permission Denied");
+//
+//                }
+//            }
+//        }
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//    }
     override fun setupView() {
         calender.setOnClickListener {
             openDatePicker()
         }
         button.setOnClickListener {
+
+            // This code is required when we download and store the file to mobile storage
 //            val file = File(
 //                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
 //                fileName
@@ -154,7 +157,10 @@ class MainActivity : BaseActivity<MainViewModel>() {
 //                image.setImageBitmap(myBitmap)
 //            }
             if(mediaType == "image"){
-
+                val intent= Intent(this,FullImageViewActivity::class.java)
+                intent.putExtra("mediaType","${mediaType}")
+                intent.putExtra("url",url)
+                startActivity(intent)
             }
             else{
                 val intent= Intent(this,PlayVideoActivity::class.java)

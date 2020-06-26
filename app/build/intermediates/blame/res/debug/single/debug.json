@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_rew.xml.flat",
         "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\drawable\\ic_rew.xml"
+    },
+    {
+        "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_fullscreen.xml.flat",
@@ -70,6 +70,10 @@
     {
         "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_detailed.xml.flat",
         "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\layout\\activity_detailed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_full_image_view.xml.flat",
+        "source": "C:\\Users\\Logic\\Desktop\\NASA\\app\\src\\main\\res\\layout\\activity_full_image_view.xml"
     },
     {
         "merged": "C:\\Users\\Logic\\Desktop\\NASA\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",

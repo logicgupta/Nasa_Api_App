@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\bd9eaa2992ad422b7eac643b0aac27f7\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.3.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a8f374263810ac0944425b939e77fa29\jetified-core-ktx-1.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\85fa2711bb2ad134a23924a267c31046\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -38,20 +38,20 @@ MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] C:\Users\Logic\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\bc3d08ee1c4710b4b0c8f772d2326f42\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\61045485808293e5346b591a420d3959\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\8fb84686ddcc564983df753d3c52ba17\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:11-69
@@ -72,7 +72,7 @@ ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:8:5-81
 	android:name
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:8:22-78
 application
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:10:5-31:19
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:10:5-30:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\85fa2711bb2ad134a23924a267c31046\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\85fa2711bb2ad134a23924a267c31046\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\4d378fe028cd0877b328a8911da22927\lifecycle-extensions-2.0.0\AndroidManifest.xml:22:5-23:19
@@ -105,26 +105,30 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:18:9-44
 	android:name
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:11:9-28
+activity#com.logic.nasa.ui.main.FullImageViewActivity
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:9-76
+	android:name
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:19-64
 activity#com.logic.nasa.ui.main.PlayVideoActivity
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:9-23:20
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:9-22:87
 	android:configChanges
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:13-75
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:22:13-75
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:19-60
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:21:13-54
 activity#com.logic.nasa.ui.main.MainActivity
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:9-30:20
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:23:9-29:20
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:19-55
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:23:19-55
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:27:27-74
 uses-sdk
 INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml

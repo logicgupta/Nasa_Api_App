@@ -24,7 +24,7 @@
 14-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:8:22-78
 15
 16    <application
-16-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:10:5-31:19
+16-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:10:5-30:19
 17        android:name="com.logic.nasa.App"
 17-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:11:9-28
 18        android:allowBackup="true"
@@ -46,25 +46,27 @@
 27-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:17:9-40
 28        android:usesCleartextTraffic="true" >
 28-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:18:9-44
-29        <activity
-29-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:9-23:20
-30            android:name="com.logic.nasa.ui.main.PlayVideoActivity"
-30-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:19-60
-31            android:configChanges="orientation|screenSize|layoutDirection" >
-31-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:13-75
-32        </activity>
+29        <activity android:name="com.logic.nasa.ui.main.FullImageViewActivity" />
+29-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:9-76
+29-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:19-64
+30        <activity
+30-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:9-22:87
+31            android:name="com.logic.nasa.ui.main.PlayVideoActivity"
+31-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:21:13-54
+32            android:configChanges="orientation|screenSize|layoutDirection" />
+32-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:22:13-75
 33        <activity android:name="com.logic.nasa.ui.main.MainActivity" >
-33-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:9-30:20
-33-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:19-55
+33-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:23:9-29:20
+33-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:23:19-55
 34            <intent-filter>
-34-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:13-29:29
+34-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:13-28:29
 35                <action android:name="android.intent.action.MAIN" />
-35-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:26:17-69
-35-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:26:25-66
+35-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:17-69
+35-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:25-66
 36
 37                <category android:name="android.intent.category.LAUNCHER" />
-37-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:28:17-77
-37-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:28:27-74
+37-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:27:17-77
+37-->C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:27:27-74
 38            </intent-filter>
 39        </activity>
 40

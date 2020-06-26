@@ -27,10 +27,10 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.logic.nasa.ui.main.FullImageViewActivity" />
         <activity
             android:name="com.logic.nasa.ui.main.PlayVideoActivity"
-            android:configChanges="orientation|screenSize|layoutDirection" >
-        </activity>
+            android:configChanges="orientation|screenSize|layoutDirection" />
         <activity android:name="com.logic.nasa.ui.main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
