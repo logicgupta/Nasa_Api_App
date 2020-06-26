@@ -5,10 +5,10 @@ Android Application is Build using latest Android architecture and Dagger Depend
 ### Libraries
 * [Android Support Library][support-lib]
 * [Android Architecture Components][arch]
-* [Android Data Binding][data-binding]
 * [Dagger 2][dagger2] for dependency injection
 * [Retrofit][retrofit] for REST api communication
-* [Exoplayer][palyer] for video streaming
+* [Exoplayer][Exoplayer] for video streaming
+* [RxJava] [RxJava]
 
 
 
@@ -18,5 +18,6 @@ Android Application is Build using latest Android architecture and Dagger Depend
 [arch]: https://developer.android.com/arch
 [dagger2]: https://google.flipshop.io/dagger
 [retrofit]: http://square.flipshop.io/retrofit
-[player]: https://developer.android.com/guide/topics/media/exoplayer
+[Exoplayer]: https://developer.android.com/guide/topics/media/exoplayer
+[RxJava]: https://github.com/ReactiveX/RxAndroid
 
