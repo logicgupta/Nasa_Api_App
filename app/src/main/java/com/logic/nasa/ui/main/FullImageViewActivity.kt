@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.os.Environment
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.logic.nasa.R
 import kotlinx.android.synthetic.main.activity_full_image_view.*
 import java.io.File
