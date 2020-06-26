@@ -26,7 +26,7 @@ class FullImageViewActivity : AppCompatActivity() {
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
             fileName
         ) // Set Your File Name
-        val myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath())
+        val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
         image.setImageBitmap(myBitmap)
 
     }
