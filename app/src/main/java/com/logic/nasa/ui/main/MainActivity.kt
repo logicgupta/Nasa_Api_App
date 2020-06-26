@@ -1,19 +1,21 @@
 package com.logic.nasa.ui.main
-
 import android.Manifest
 import android.app.DatePickerDialog
 import android.app.DownloadManager
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.database.Cursor
+import android.graphics.BitmapFactory
+import android.media.ThumbnailUtils
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
+import android.provider.MediaStore
 import android.view.View
-import androidx.annotation.LongDef
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.logic.nasa.R
 import com.logic.nasa.di.component.ActivityComponent
@@ -28,7 +30,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
 
     override fun injectDependencies(activityComponent: ActivityComponent) {
-        activityComponent.injectMainActivity(this);
+        activityComponent.injectMainActivity(this)
     }
 
     override fun provideLayoutId(): Int =R.layout.activity_main
@@ -36,6 +38,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.getTodayData()
+        registerReceiver(onDownloadComplete, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
     }
     var day:String?=null
     var month:String?=null
@@ -45,7 +48,6 @@ class MainActivity : BaseActivity<MainViewModel>() {
     var url:String?=null
     private val STORAGE_PERMISSION_CODE:Int=1000
     private var fileName:String?=null
-    var download_flag:Int = 0
     var downloadId:Long = 0
     lateinit var manager:DownloadManager
     override fun setupObservers() {
@@ -55,19 +57,15 @@ class MainActivity : BaseActivity<MainViewModel>() {
             if(it){
                 layout.visibility=View.GONE
             }
-            else{
-                progress_circular.visibility= View.GONE
-            }
-        });
+        })
 
         viewModel.errorStringLiveData.observe(this, Observer {
             error_handle.text=it
         })
 
         viewModel.todayLiveData.observe(this, Observer {
-            layout.visibility=View.VISIBLE
             title_textView.text=it.title
-            desc_textView.text=it.explanation;
+            desc_textView.text=it.explanation
             fileUrl=it.url
             mediaType=it.media_type
             url=it.hdurl
@@ -87,7 +85,6 @@ class MainActivity : BaseActivity<MainViewModel>() {
             .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
         request.setTitle("Downloading")
         request.setDescription("File is Downloading")
-
         request.allowScanningByMediaScanner()
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
@@ -133,39 +130,19 @@ class MainActivity : BaseActivity<MainViewModel>() {
                 }
                 else{
                   //  permissions from popup denied
-                    showToast("Permission Denied");
+                    showToast("Permission Denied")
 
                 }
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
-   fun getstatus(){
-
-       val cursor: Cursor =
-           manager.query(DownloadManager.Query().setFilterById(downloadId))
-
-       if (cursor != null && cursor.moveToNext()) {
-           val status: Int = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
-           cursor.close()
-           if (status == DownloadManager.STATUS_FAILED) {
-               download_flag=1
-           } else if (status == DownloadManager.STATUS_PENDING || status == DownloadManager.STATUS_PAUSED) {
-               download_flag=2
-
-           } else if (status == DownloadManager.STATUS_SUCCESSFUL) {
-               download_flag=3
-           } else if (status == DownloadManager.STATUS_RUNNING) {
-               download_flag=4
-           }
-       }
-    }
     override fun setupView() {
         calender.setOnClickListener {
             openDatePicker()
         }
         button.setOnClickListener {
-            getstatus()
+
 
             val file = File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
@@ -174,47 +151,22 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
             if (file.exists()) {
                 if(mediaType == "image"){
-                    if(download_flag==3){
+
                         val intent= Intent(this,FullImageViewActivity::class.java)
                         intent.putExtra("mediaType","${mediaType}")
                         intent.putExtra("filename",fileName)
                         startActivity(intent)
-                    }
-                    else if (download_flag==4){
-                        showToast("Please Wait , downloading in progress...")
-                    }
-                    else if(download_flag==2){
-                        showToast("Downloading paused , start download to proceed")
-                    }
-                    else{
-                        showToast("Failed to downloading Video")
-                    }
                 }
                 else{
-                    Log.e("d;",fileName)
-                   if(download_flag==3){
                        val intent= Intent(this,PlayVideoActivity::class.java)
                        intent.putExtra("mediaType","${mediaType}")
                        intent.putExtra("filename",fileName)
                        startActivity(intent)
-                   }
-                    else if (download_flag==4){
-                       showToast("Please Wait , downloading in progress...")
-                   }
-                    else if(download_flag==2){
-                       showToast("Downloading paused , start download to proceed")
-                   }
-                    else{
-                       showToast("Failed to downloading Video")
-                   }
                 }
-
-
             }
             else{
-                showToast("File not Downloaded , Yet it's in progress ")
+                showToast("File not Found !")
             }
-
         }
     }
 
@@ -232,12 +184,11 @@ class MainActivity : BaseActivity<MainViewModel>() {
             month=(monthOfYear+1).toString()
             year=_year.toString()
             if(day!!.length==1){
-                day="0"+day;
+                day="0"+day
             }
             if(month!!.length==1){
-                month="0"+month;
+                month="0"+month
             }
-            Log.e("s",""+year+"-"+month+"-"+day);
             viewModel.getSpecificDateDate(year+"-"+month+"-"+day)
 
         }, year_current, month_current, day_current)
@@ -245,4 +196,43 @@ class MainActivity : BaseActivity<MainViewModel>() {
         dpd.show()
     }
 
+
+    private val onDownloadComplete: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            //Fetching the download id received with the broadcast
+            val id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+            //Checking if the received broadcast is for our enqueued download by matching download id
+            if (downloadId === id) {
+                Toast.makeText(this@MainActivity, "Download Completed", Toast.LENGTH_SHORT).show()
+                layout.visibility=View.VISIBLE
+                progress_circular.visibility= View.GONE
+                if (mediaType=="image"){
+
+                    val file = File(
+                        Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                        fileName
+                    ) // Set Your File Name
+                    val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
+                    image.setImageBitmap(myBitmap)
+                }
+                else{
+                    val file = File(
+                        Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                        fileName
+                    )
+                    val bMap = ThumbnailUtils.createVideoThumbnail(
+                        file.absolutePath,
+                        MediaStore.Video.Thumbnails.MICRO_KIND
+                    )
+                    image.setImageBitmap(bMap)
+
+                }
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(onDownloadComplete)
+    }
 }
