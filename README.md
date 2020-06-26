@@ -2,6 +2,8 @@
 
 Android Application is Build using latest Android architecture and Dagger Dependency Injection . Android application is relatively complex if someone does know MVVM architecture , Dagger Dependency Injection , Respositery Design Pattern etc
 
+#### Application User Interface is relatively simple. But, the application fullfills all the requirements .Also , Application Code is Clean and fully architecture based.
+
 ### Libraries
 * [Android Support Library][support-lib]
 * [Android Architecture Components][arch]
