@@ -15,10 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/layout"
@@ -44,7 +40,8 @@
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp"
           android:text=""
-
+          android:textColor="@android:color/black"
+          android:textStyle="bold"
           android:textSize="18sp"
           android:padding="4dp"
           android:layout_marginEnd="110dp"
@@ -52,18 +49,18 @@
           app:layout_constraintStart_toStartOf="@+id/guideline_left"
           app:layout_constraintTop_toTopOf="parent" />
 
-      <androidx.constraintlayout.widget.Guideline
-          android:id="@+id/divide"
-          android:layout_width="1dp"
-          android:layout_height="match_parent"
-          android:orientation="vertical"
-          app:layout_constraintGuide_begin="304dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/divide"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="319dp" />
 
       <ImageView
-          android:layout_width="80dp"
+          android:layout_width="60dp"
           android:id="@+id/calender"
           android:layout_marginTop="16dp"
-          android:layout_height="80dp"
+          android:layout_height="60dp"
           android:src="@drawable/ic_calendar"
           app:layout_constraintEnd_toStartOf="@+id/guideline_right"
           app:layout_constraintTop_toTopOf="parent" />

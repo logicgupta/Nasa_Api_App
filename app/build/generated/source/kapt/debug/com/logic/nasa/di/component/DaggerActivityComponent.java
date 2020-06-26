@@ -5,6 +5,7 @@ import com.logic.nasa.di.module.ActivityModule;
 import com.logic.nasa.di.module.ActivityModule_ProvidesMainModelFactory;
 import com.logic.nasa.ui.main.MainActivity;
 import com.logic.nasa.ui.main.MainViewModel;
+import com.logic.nasa.ui.main.PlayVideoActivity;
 import com.logic.nasa.utils.BaseActivity_MembersInjector;
 import dagger.internal.Preconditions;
 
@@ -34,7 +35,16 @@ public final class DaggerActivityComponent implements ActivityComponent {
   public void injectMainActivity(MainActivity activity) {
     injectMainActivity2(activity);}
 
+  @Override
+  public void injectPlayVideoActivity(PlayVideoActivity activity) {
+    injectPlayVideoActivity2(activity);}
+
   private MainActivity injectMainActivity2(MainActivity instance) {
+    BaseActivity_MembersInjector.injectViewModel(instance, getMainViewModel());
+    return instance;
+  }
+
+  private PlayVideoActivity injectPlayVideoActivity2(PlayVideoActivity instance) {
     BaseActivity_MembersInjector.injectViewModel(instance, getMainViewModel());
     return instance;
   }

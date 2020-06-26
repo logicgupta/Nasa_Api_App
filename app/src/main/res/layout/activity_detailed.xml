@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.DetailedActivity">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:resize_mode="fit"
+            android:id="@+id/playerView"
+            app:hide_on_touch="true"
+            app:show_timeout="5000"
+            app:rewind_increment="10000"
+            app:fastforward_increment="10000"
+            app:use_controller="true"
+            app:player_layout_id="@layout/exo_simple_player_view"
+            android:background="@android:color/background_dark"
+            app:controller_layout_id="@layout/custom_controller"
+
+            >
+        </com.google.android.exoplayer2.ui.PlayerView>
+
+        <ProgressBar
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/progress_bar"
+            android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

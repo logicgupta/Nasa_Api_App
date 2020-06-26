@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\bd9eaa2992ad422b7eac643b0aac27f7\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.3.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a8f374263810ac0944425b939e77fa29\jetified-core-ktx-1.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\85fa2711bb2ad134a23924a267c31046\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -12,6 +12,9 @@ MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] C:\Users\Logic\.gradle\caches
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\4d378fe028cd0877b328a8911da22927\lifecycle-extensions-2.0.0\AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a2621ed50634e84942c4c8fd8087c715\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\8d16278871ebe40fb7672fe83ee53f6f\jetified-glide-4.11.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a2e91995e8f736d2a87c87c20431fabb\jetified-exoplayer-dash-2.7.3\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\61c775d2d9ce4e4ed506b3f992155f65\jetified-exoplayer-ui-2.7.3\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\81c4dadd303f9c8333d2f5b5bfed829a\jetified-exoplayer-core-2.7.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a8b5f2f918ccd5b61b38ba8ba7a0ef9d\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\035f3ead55434a936fac43666c47076e\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a814bd133b4039435948c0667ee48966\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -35,20 +38,20 @@ MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] C:\Users\Logic\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\bc3d08ee1c4710b4b0c8f772d2326f42\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\61045485808293e5346b591a420d3959\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\8fb84686ddcc564983df753d3c52ba17\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:2:11-69
@@ -69,7 +72,7 @@ ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:8:5-81
 	android:name
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:8:22-78
 application
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:10:5-27:19
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:10:5-31:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\85fa2711bb2ad134a23924a267c31046\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\85fa2711bb2ad134a23924a267c31046\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\4d378fe028cd0877b328a8911da22927\lifecycle-extensions-2.0.0\AndroidManifest.xml:22:5-23:19
@@ -102,24 +105,26 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\Logic\.gradle\
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:18:9-44
 	android:name
 		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:11:9-28
-activity#com.logic.nasa.ui.main.DetailedActivity
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:9-71
+activity#com.logic.nasa.ui.main.PlayVideoActivity
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:9-23:20
+	android:configChanges
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:13-75
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:19-59
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:19:19-60
 activity#com.logic.nasa.ui.main.MainActivity
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:9-26:20
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:9-30:20
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:20:19-55
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:19-55
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml:28:27-74
 uses-sdk
 INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Logic\Desktop\NASA\app\src\main\AndroidManifest.xml
@@ -140,6 +145,12 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Logi
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a2621ed50634e84942c4c8fd8087c715\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\8d16278871ebe40fb7672fe83ee53f6f\jetified-glide-4.11.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\8d16278871ebe40fb7672fe83ee53f6f\jetified-glide-4.11.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a2e91995e8f736d2a87c87c20431fabb\jetified-exoplayer-dash-2.7.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a2e91995e8f736d2a87c87c20431fabb\jetified-exoplayer-dash-2.7.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\61c775d2d9ce4e4ed506b3f992155f65\jetified-exoplayer-ui-2.7.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\61c775d2d9ce4e4ed506b3f992155f65\jetified-exoplayer-ui-2.7.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\81c4dadd303f9c8333d2f5b5bfed829a\jetified-exoplayer-core-2.7.3\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.7.3] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\81c4dadd303f9c8333d2f5b5bfed829a\jetified-exoplayer-core-2.7.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a8b5f2f918ccd5b61b38ba8ba7a0ef9d\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\a8b5f2f918ccd5b61b38ba8ba7a0ef9d\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Logic\.gradle\caches\transforms-2\files-2.1\035f3ead55434a936fac43666c47076e\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
