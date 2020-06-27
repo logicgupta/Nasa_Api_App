@@ -55,15 +55,40 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
         viewModel.progressLiveData.observe(this, Observer {
             if(it){
+                error_handle.visibility=View.GONE
                 layout.visibility=View.GONE
+                image.visibility=View.GONE
+                progress_circular.visibility=View.VISIBLE
             }
         })
 
         viewModel.errorStringLiveData.observe(this, Observer {
             error_handle.text=it
+            error_handle.visibility=View.VISIBLE
         })
 
+        /*
+                    Default Api Data -- Today's Data
+         */
         viewModel.todayLiveData.observe(this, Observer {
+            title_textView.text=it.title
+            desc_textView.text=it.explanation
+            fileUrl=it.url
+            mediaType=it.media_type
+            url=it.hdurl
+            if(it.media_type == "image"){
+                button.text="Zoom"
+            }
+            else
+                button.text="Play"
+            checkPermission()
+        })
+
+        /*
+                   Calender Date Data
+         */
+
+        viewModel.specificLiveData.observe(this, Observer {
             title_textView.text=it.title
             desc_textView.text=it.explanation
             fileUrl=it.url
@@ -78,11 +103,11 @@ class MainActivity : BaseActivity<MainViewModel>() {
         })
     }
 
-    fun getDownloadedImage(){
+    fun getDownloadFile(){
+        showToast("File Downloading in Progress....")
         fileName=System.currentTimeMillis().toString()
         val request=DownloadManager.Request(Uri.parse(url))
-        request
-            .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
         request.setTitle("Downloading")
         request.setDescription("File is Downloading")
         request.allowScanningByMediaScanner()
@@ -106,12 +131,12 @@ class MainActivity : BaseActivity<MainViewModel>() {
             }
             else{
                 // Granted
-                getDownloadedImage()
+                getDownloadFile()
             }
         }
         else{
                 //   system os is less
-            getDownloadedImage()
+            getDownloadFile()
         }
     }
 
@@ -126,7 +151,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
                         PackageManager.PERMISSION_GRANTED){
 
                     // permission PopUp granted
-                    getDownloadedImage()
+                    getDownloadFile()
                 }
                 else{
                   //  permissions from popup denied
@@ -199,12 +224,15 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     private val onDownloadComplete: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
+
             //Fetching the download id received with the broadcast
             val id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+
             //Checking if the received broadcast is for our enqueued download by matching download id
             if (downloadId === id) {
-                Toast.makeText(this@MainActivity, "Download Completed", Toast.LENGTH_SHORT).show()
+                showToast("Download Completed")
                 layout.visibility=View.VISIBLE
+                image.visibility=View.VISIBLE
                 progress_circular.visibility= View.GONE
                 if (mediaType=="image"){
 

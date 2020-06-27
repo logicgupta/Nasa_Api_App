@@ -15,30 +15,31 @@ class MainViewModel(networkHelper: NetworkHelper,
 
 
     public val todayLiveData:MutableLiveData<DefaultData> = MutableLiveData()
+    public val specificLiveData:MutableLiveData<DefaultData> = MutableLiveData()
 
 
     fun getTodayData(){
 
         if(!checkInternetConnectionWithError()){
-            progressLiveData.postValue(false);
+            progressLiveData.postValue(false)
                 return;
         }
-        progressLiveData.postValue(true);
+        progressLiveData.postValue(true)
 
         compositeDisposable.add(
             mainRepository
                 .getTodayData()
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    Log.e("Tag","${it}");
+                    Log.e("Tag","${it}")
                     todayLiveData.postValue(it)
-                    progressLiveData.postValue(false);
+                    progressLiveData.postValue(false)
 
                 },{
                     it.message?.run {
-                        Log.e("Tag","${toString()}");
+                        Log.e("Tag","${toString()}")
                         errorStringLiveData.postValue(toString())
-                        progressLiveData.postValue(false);
+                        progressLiveData.postValue(false)
                     }
                 })
         );
@@ -58,7 +59,7 @@ class MainViewModel(networkHelper: NetworkHelper,
                 .subscribeOn(Schedulers.io())
                 .subscribe({
                     Log.e("Tag","${it}")
-                    todayLiveData.postValue(it)
+                    specificLiveData.postValue(it)
                     progressLiveData.postValue(false)
 
                 },{
