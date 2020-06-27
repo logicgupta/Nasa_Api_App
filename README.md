@@ -6,6 +6,9 @@ Android Application is Build using latest Android architecture and Dagger Depend
 
 ###### The UI of Application is extremly poor ,But It's fullfils all the requirement as described in the problem statement . UI of the application can be made more Good. I will later on make the application More good and add more functionality to the application
 
+
+#### Attention: --  Suppports API level 26 or higher
+
 ### Libraries
 * [Android Support Library][support-lib]
 * [Android Architecture Components][arch]
