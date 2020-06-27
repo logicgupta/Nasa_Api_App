@@ -4,6 +4,8 @@ Android Application is Build using latest Android architecture and Dagger Depend
 
 #### Application User Interface is relatively simple. But, the application fullfils all the requirements. Also,application code is clean and fully architecture based.
 
+###### The UI of Application is extremly poor ,But It's fullfils all the requirement as described in the problem statement . UI of the application can be made more Good. I will later on make the application More good and add more functionality to the application
+
 ### Libraries
 * [Android Support Library][support-lib]
 * [Android Architecture Components][arch]
